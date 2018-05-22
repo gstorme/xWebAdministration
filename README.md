@@ -344,10 +344,16 @@ Please check out common DSC Resources [contributing guidelines](https://github.c
 
 ### Unreleased
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Added missing settings for **xWebAppPoolDefaults**. Fixes #105.
 
 * Added missing settings for **xWebAppPoolDefaults**. Fixes #105.
 =======
+=======
+
+* Changes to xWebAdministration
+  * Moved file Codecov.yml that was added to the wrong path in previous release.
+>>>>>>> xWebAdministration: Move Codecov.yml file (#356)
 * Updated **xWebSite** to include ability to manage custom logging fields
 >>>>>>> Added LogCustomFields to xWebSite (#342)
 
