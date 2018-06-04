@@ -355,14 +355,19 @@ Please check out common DSC Resources [contributing guidelines](https://github.c
 =======
 =======
 
-* Descriptive entry ([issue #267](https://github.com/PowerShell/xWebAdministration/issues/267).
-* Updated **xIISLogging** to include ability to manage custom logging fields
-
 * Changes to xWebAdministration
   * Moved file Codecov.yml that was added to the wrong path in previous release.
+<<<<<<< HEAD
 >>>>>>> xWebAdministration: Move Codecov.yml file (#356)
 * Updated **xWebSite** to include ability to manage custom logging fields
 >>>>>>> Added LogCustomFields to xWebSite (#342)
+=======
+* Updated **xWebSite** to include ability to manage custom logging fields.
+  [Reggie Gibson (@regedit32)](https://github.com/regedit32)
+* Updated **xIISLogging** to include ability to manage custom logging fields
+  ([issue #267](https://github.com/PowerShell/xWebAdministration/issues/267)).
+  [@ldillonel](https://github.com/ldillonel)
+>>>>>>> Update README.md (#361)
 
 ### 1.20.0.0
 
