@@ -371,11 +371,17 @@ This resource manages the IIS configuration section locking (overrideMode) to co
   ([issue #267](https://github.com/PowerShell/xWebAdministration/issues/267)).
   [@ldillonel](https://github.com/ldillonel)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Update README.md (#361)
 =======
 * Updated **xWebSite** to include ability to manage custom logging fields
 * BREAKING CHANGE: Updated **xIisFeatureDelegation** to be able to manage any configuration section
 >>>>>>> BREAKING CHANGE: Update xIisFeatureDelegation to manage all sections (#359)
+=======
+* BREAKING CHANGE: Updated **xIisFeatureDelegation** to be able to manage any
+  configuration section.
+  [Reggie Gibson (@regedit32)](https://github.com/regedit32)
+>>>>>>> Update change log in README.md (#362)
 
 ### 1.20.0.0
 
