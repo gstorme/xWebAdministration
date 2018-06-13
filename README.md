@@ -358,6 +358,8 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 =======
 =======
 
+### 2.0.0.0
+
 * Changes to xWebAdministration
   * Moved file Codecov.yml that was added to the wrong path in previous release.
 <<<<<<< HEAD
