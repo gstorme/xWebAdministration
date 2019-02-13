@@ -401,6 +401,7 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Added missing settings for **xWebAppPoolDefaults**. Fixes #105.
 
 * Added missing settings for **xWebAppPoolDefaults**. Fixes #105.
@@ -410,6 +411,13 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 =======
 * Helper: Fixed subject comparison for multiple entries
 >>>>>>> Fixed subject comparison
+=======
+* Fix subject comparison multiple entries for helper function `Find-Certificate` that could not find the test
+  helper function `Install-NewSelfSignedCertificateExScript`.
+* Update unit test for helper function `Find-Certificate` to check for multiple
+  subject names in different orders.
+* Fixed subject comparison for multiple entries in **Find-Certificate**
+>>>>>>> Breaking out long lines
 * xWebSite: Full path is used to get list of default documents
 
 ### 2.4.0.0
