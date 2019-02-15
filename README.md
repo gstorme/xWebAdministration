@@ -158,6 +158,7 @@ Please check out common DSC Resources [contributing guidelines](https://github.c
 ### xWebsite
 
 * **Name** : The desired name of the website.
+* **SiteId** : Optional. The desired IIS site Id for the website.
 * **PhysicalPath**: The path to the files that compose the website.
 * **State**: The state of the website: { Started | Stopped }
 * **BindingInfo**: Website's binding information in the form of an array of embedded instances of the **MSFT_xWebBindingInformation** CIM class that implements the following properties:
@@ -403,6 +404,7 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Added missing settings for **xWebAppPoolDefaults**. Fixes #105.
 
 * Added missing settings for **xWebAppPoolDefaults**. Fixes #105.
@@ -419,6 +421,10 @@ This resource manages the IIS configuration section locking (overrideMode) to co
   subject names in different orders.
 * Fixed subject comparison for multiple entries in **Find-Certificate**
 >>>>>>> Breaking out long lines
+=======
+
+* Added SiteId to xWebSite to address [396]
+>>>>>>> xWebSite: adding support for Site Id in xWebSite (#415)
 * xWebSite: Full path is used to get list of default documents
 * xIISLogging: Added support for LogTargetW3C
 
