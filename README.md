@@ -420,6 +420,7 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 * Updated unit test for helper function `Find-Certificate` to check for multiple
   subject names in different orders.
 * Fixed subject comparison for multiple entries in **Find-Certificate**
+<<<<<<< HEAD
 >>>>>>> Breaking out long lines
 =======
 
@@ -428,6 +429,11 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 * xWebSite: Full path is used to get list of default documents
 * xIISLogging: Added support for LogTargetW3C
 
+=======
+* Added SiteId to xWebSite to address [396]
+* xWebSite: Full path is used to get list of default documents
+* xIISLogging: Added support for LogTargetW3C
+>>>>>>> Fixing merge conflict
 
 ### 2.4.0.0
 
