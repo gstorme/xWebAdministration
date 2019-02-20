@@ -431,7 +431,12 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 * xIISLogging: Added support for LogTargetW3C
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
+=======
+### 2.5.0.0
+
+>>>>>>> Releasing version 2.5.0.0
 * Added SiteId to xWebSite to address [396]
 * xWebSite: Full path is used to get list of default documents
 * xIISLogging: Added support for LogTargetW3C
