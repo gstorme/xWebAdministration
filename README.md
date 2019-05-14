@@ -420,7 +420,11 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 =======
 
 ### 2.6.0.0
+<<<<<<< HEAD
 >>>>>>> Releasing version 2.6.0.0
+=======
+* Changed order of classes in schema.mof files to workaround [#423](https://github.com/PowerShell/xWebAdministration/issues/423)
+>>>>>>> fixes #423 (#424)
 * Fix subject comparison multiple entries for helper function `Find-Certificate` that could not find the test
   helper function `Install-NewSelfSignedCertificateExScript`.
 * Updated unit test for helper function `Find-Certificate` to check for multiple

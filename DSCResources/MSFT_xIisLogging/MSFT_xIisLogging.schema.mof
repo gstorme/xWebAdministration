@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ClassVersion("1.0.0")]
 class MSFT_xLogCustomField
 {
@@ -29,6 +30,8 @@ class MSFT_xLogCustomField
     [Required, Description("Specify the source type"), ValueMap{"RequestHeader","ResponseHeader","ServerVariable"},Values{"RequestHeader","ResponseHeader","ServerVariable"}] String SourceType;
 };
 
+=======
+>>>>>>> fixes #423 (#424)
 [ClassVersion("1.0.0"), FriendlyName("xIisLogging")]
 class MSFT_xIisLogging : OMI_BaseResource
 {
@@ -41,4 +44,15 @@ class MSFT_xIisLogging : OMI_BaseResource
     [Write, Description ("Specifies whether IIS will use Event Tracing or file logging"), ValueMap{"File","ETW","File,ETW"}, Values{"File","ETW","File,ETW"}] String LogTargetW3C;
     [Write, EmbeddedInstance("MSFT_xLogCustomField"), Description("Custom logging field information in the form of an array of embedded instances of MSFT_xLogCustomField CIM class")] String LogCustomFields[];
 };
+<<<<<<< HEAD
 >>>>>>> Adding parameter to LogTargetW3C MSFT_xIisLogging.psm1  (#416)
+=======
+
+[ClassVersion("1.0.0")]
+class MSFT_xLogCustomField
+{
+    [Required, Description("Name for the custom field")] String LogFieldName;
+    [Required, Description("Name for the source type")] String SourceName;
+    [Required, Description("Specify the source type"), ValueMap{"RequestHeader","ResponseHeader","ServerVariable"},Values{"RequestHeader","ResponseHeader","ServerVariable"}] String SourceType;
+};
+>>>>>>> fixes #423 (#424)
