@@ -21,6 +21,7 @@ Configuration Sample_xWebAppPoolDefaults
         # Configures the application pool defaults.
         xWebAppPoolDefaults PoolDefaults
         {
+<<<<<<< HEAD
             ApplyTo                        = 'Machine'
             autoStart                      = $true
             CLRConfigFile                  = ''
@@ -69,6 +70,11 @@ Configuration Sample_xWebAppPoolDefaults
             restartRequestsLimit           = 0
             restartTimeLimit               = (New-TimeSpan -Minutes 1440).ToString()
             restartSchedule                = @('00:00:00', '08:00:00', '16:00:00')
+=======
+            ApplyTo               = 'Machine'
+            ManagedRuntimeVersion = 'v4.0'
+            IdentityType          = 'ApplicationPoolIdentity'
+>>>>>>> xWebAdministration: OptIn to "Common Tests - Validate Example Files" Dsc Resource Meta Test (#431)
         }
 
         
