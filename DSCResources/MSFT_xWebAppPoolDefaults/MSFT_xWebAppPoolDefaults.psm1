@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Load the Helper Module
 Import-Module -Name "$PSScriptRoot\..\Helper.psm1"
 
@@ -815,6 +816,13 @@ Export-ModuleMember -Function *-TargetResource
 =======
 # Load the Helper Module
 Import-Module -Name "$PSScriptRoot\..\Helper.psm1"
+=======
+$script:resourceModulePath = Split-Path -Path (Split-Path -Path $PSScriptRoot -Parent) -Parent
+$script:modulesFolderPath = Join-Path -Path $script:resourceModulePath -ChildPath 'Modules'
+$script:localizationModulePath = Join-Path -Path $script:modulesFolderPath -ChildPath 'xWebAdministration.Common'
+
+Import-Module -Name (Join-Path -Path $script:localizationModulePath -ChildPath 'xWebAdministration.Common.psm1')
+>>>>>>> xWebAdministration: Added new helper function module (#479)
 
 # Localized messages
 data LocalizedData
