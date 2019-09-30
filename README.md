@@ -437,6 +437,7 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 * **DefaultApplicationPool**: Name of the default application pool used by websites.
 * **AllowSubDirConfig**: Should IIS look for config files in subdirectories, either **true** or **false**
 
+<<<<<<< HEAD
 ## Versions
 
 ### Unreleased
@@ -817,6 +818,8 @@ Module manifest metadata changed to improve PowerShell Gallery experience.
 * Initial release with the following resources
   * **xWebsite**
 
+=======
+>>>>>>> Moved change log from README.md (#480)
 ## Examples
 
 ### Registering PHP
