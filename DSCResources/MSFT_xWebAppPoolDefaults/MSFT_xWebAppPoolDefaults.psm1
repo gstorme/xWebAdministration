@@ -824,17 +824,8 @@ $script:localizationModulePath = Join-Path -Path $script:modulesFolderPath -Chil
 Import-Module -Name (Join-Path -Path $script:localizationModulePath -ChildPath 'xWebAdministration.Common.psm1')
 >>>>>>> xWebAdministration: Added new helper function module (#479)
 
-# Localized messages
-data LocalizedData
-{
-    # culture="en-US"
-    ConvertFrom-StringData -StringData @'
-        NoWebAdministrationModule = Please ensure that WebAdministration module is installed.
-        SettingValue              = Changing default value '{0}' to '{1}'
-        ValueOk                   = Default value '{0}' is already '{1}'
-        VerboseGetTargetResource  = Get-TargetResource has been run.
-'@
-}
+# Import Localization Strings
+$script:localizedData = Get-LocalizedData -ResourceName 'MSFT_xWebAppPoolDefaults'
 
 function Get-TargetResource
 {
@@ -855,7 +846,7 @@ function Get-TargetResource
 
     Assert-Module
 
-    Write-Verbose -Message $LocalizedData.VerboseGetTargetResource
+    Write-Verbose -Message $script:localizedData.VerboseGetTargetResource
 
     return @{
         ManagedRuntimeVersion = (Get-Value -Path '' -Name 'managedRuntimeVersion')
@@ -980,7 +971,7 @@ function Confirm-Value
     else
     {
         $relPath = $Path + '/' + $Name
-        Write-Verbose($LocalizedData.ValueOk -f $relPath,$NewValue);
+        Write-Verbose($script:localizedData.ValueOk -f $relPath,$NewValue);
         return $true
     }
 }
@@ -1025,7 +1016,7 @@ function Set-Value
             -Value "$NewValue"
 
         $relPath = $Path + '/' + $Name
-        Write-Verbose($LocalizedData.SettingValue -f $relPath,$NewValue);
+        Write-Verbose($script:localizedData.SettingValue -f $relPath,$NewValue);
     }
 }
 
