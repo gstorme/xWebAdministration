@@ -839,9 +839,9 @@ function Get-TargetResource
     param
     (
         [Parameter(Mandatory = $true)]
-        [ValidateSet('Machine')]
+        [ValidateSet('Yes')]
         [System.String]
-        $ApplyTo
+        $IsSingleInstance
     )
 
     Assert-Module
@@ -866,9 +866,9 @@ function Set-TargetResource
     param
     (
         [Parameter(Mandatory = $true)]
-        [ValidateSet('Machine')]
+        [ValidateSet('Yes')]
         [System.String]
-        $ApplyTo,
+        $IsSingleInstance,
 
         [Parameter()]
         [ValidateSet('','v2.0','v4.0')]
@@ -901,9 +901,9 @@ function Test-TargetResource
     param
     (
         [Parameter(Mandatory = $true)]
-        [ValidateSet('Machine')]
+        [ValidateSet('Yes')]
         [System.String]
-        $ApplyTo,
+        $IsSingleInstance,
 
         [Parameter()]
         [ValidateSet('','v2.0','v4.0')]

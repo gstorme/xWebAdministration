@@ -22,6 +22,7 @@ Configuration Sample_xWebAppPoolDefaults
         xWebAppPoolDefaults PoolDefaults
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             ApplyTo                        = 'Machine'
             autoStart                      = $true
             CLRConfigFile                  = ''
@@ -72,6 +73,9 @@ Configuration Sample_xWebAppPoolDefaults
             restartSchedule                = @('00:00:00', '08:00:00', '16:00:00')
 =======
             ApplyTo               = 'Machine'
+=======
+            IsSingleInstance      = 'Yes'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
             ManagedRuntimeVersion = 'v4.0'
             IdentityType          = 'ApplicationPoolIdentity'
 >>>>>>> xWebAdministration: OptIn to "Common Tests - Validate Example Files" Dsc Resource Meta Test (#431)

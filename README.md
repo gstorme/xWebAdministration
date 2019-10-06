@@ -431,6 +431,7 @@ This resource manages the IIS configuration section locking (overrideMode) to co
 
 ### xWebAppPoolDefaults
 
+<<<<<<< HEAD
 * **ApplyTo**: Required Key value, always **Machine**
 * **autoStart** : When set to `$true`, indicates to the World Wide Web Publishing Service (W3SVC) that the application pool should be automatically started when it is created or when IIS is started.
 * **CLRConfigFile** : Indicates the .NET configuration file for the application pool.
@@ -516,6 +517,11 @@ This resource manages the IIS configuration section locking (overrideMode) to co
     The value must be an array of string representations of TimeSpan values.
     TimeSpan values must be between `00:00:00` and `23:59:59` seconds inclusive, with a granularity of 60 seconds.
     Setting the value of this property to `""` disables the schedule.
+=======
+* **IsSingleInstance**: Specifies the resource is a single instance, the value must be **Yes**
+* **ManagedRuntimeVersion**: CLR Version {v2.0|v4.0|} empty string for unmanaged.
+* **ApplicationPoolIdentity**: {ApplicationPoolIdentity | LocalService | LocalSystem | NetworkService}
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
 ### xWebSiteDefaults
 
@@ -1404,6 +1410,7 @@ configuration Sample_IISServerDefaults
 
          xWebAppPoolDefaults PoolDefaults
          {
+<<<<<<< HEAD
             ApplyTo                        = 'Machine'
             autoStart                      = $true
             CLRConfigFile                  = ''
@@ -1452,6 +1459,11 @@ configuration Sample_IISServerDefaults
             restartRequestsLimit           = 0
             restartTimeLimit               = (New-TimeSpan -Minutes 1440).ToString()
             restartSchedule                = @('00:00:00', '08:00:00', '16:00:00')
+=======
+            IsSingleInstance = 'Yes'
+            ManagedRuntimeVersion = 'v4.0'
+            IdentityType = 'ApplicationPoolIdentity'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
          }
     }
 }

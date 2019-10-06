@@ -4,6 +4,7 @@
 [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseDeclaredVarsMoreThanAssigments', '')]
 param ()
 
+<<<<<<< HEAD
 $ConfigData = @{
     AllNodes = @(
         @{
@@ -14,6 +15,17 @@ $ConfigData = @{
             NodeName = 'localhost'
         }
     )
+=======
+configuration MSFT_xWebAppPoolDefaults_Config
+{
+    Import-DscResource -ModuleName xWebAdministration
+
+    xWebAppPoolDefaults PoolDefaults
+    {
+        IsSingleInstance = 'Yes'
+        ManagedRuntimeVersion = $originalValue
+    }
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 }
 
 $TestCredential = New-Object -TypeName PSCredential -ArgumentList (
@@ -21,6 +33,7 @@ $TestCredential = New-Object -TypeName PSCredential -ArgumentList (
     ('5t6y7u8i' | ConvertTo-SecureString -AsPlainText -Force)
 )
 
+<<<<<<< HEAD
 $TestParameters = [Ordered]@{    
     applyTo                        = 'Machine'
     autoStart                      = $false
@@ -71,6 +84,13 @@ $TestParameters = [Ordered]@{
     restartRequestsLimit           = 1000
     restartTimeLimit               = '2.10:00:00'
     restartSchedule                = @('05:00:00', '21:00:00')
+=======
+    xWebAppPoolDefaults PoolDefaults
+    {
+        IsSingleInstance = 'Yes'
+        ManagedRuntimeVersion = $env:PesterManagedRuntimeVersion
+    }
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 }
 
 Configuration MSFT_xWebAppPoolDefaults_Config
@@ -79,6 +99,7 @@ Configuration MSFT_xWebAppPoolDefaults_Config
 
     Node $AllNodes.NodeName
     {
+<<<<<<< HEAD
         xWebAppPoolDefaults Defaults
         {
             ApplyTo                        = $TestParameters.applyTo
@@ -131,6 +152,10 @@ Configuration MSFT_xWebAppPoolDefaults_Config
             restartTimeLimit               = $TestParameters.restartTimeLimit
             restartSchedule                = $TestParameters.restartSchedule
         }
+=======
+        IsSingleInstance = 'Yes'
+        IdentityType = $env:PesterApplicationPoolIdentity
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
     }
 }
 

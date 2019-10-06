@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 [ClassVersion("1.0.0.0"), FriendlyName("xWebAppPoolDefaults")]
 class MSFT_xWebAppPoolDefaults : OMI_BaseResource
@@ -54,3 +55,13 @@ class MSFT_xWebAppPoolDefaults : OMI_BaseResource
     [Write, Description("Indicates a set of specific local times, in 24 hour format, when the application pool is recycled. The value must be an array of string representations of TimeSpan values. TimeSpan values must be between 00:00:00 and 23:59:59 seconds inclusive, with a granularity of 60 seconds. Setting the value of this property to '' disables the schedule.")] String restartSchedule[];
 
 };
+=======
+
+[ClassVersion("1.0.0.0"), FriendlyName("xWebAppPoolDefaults")]
+class MSFT_xWebAppPoolDefaults : OMI_BaseResource
+{
+    [Key, Description("Specifies the resource is a single instance, the value must be 'Yes'"), ValueMap{"Yes"}, Values{"Yes"}] String IsSingleInstance;
+    [write, Description("applicationPools/applicationPoolDefaults/managedRuntimeVersion"), ValueMap{"","v2.0","v4.0"}, Values{"","v2.0","v4.0"}] string ManagedRuntimeVersion;
+    [write, Description("applicationPools/applicationPoolDefaults/processModel/identityType"), ValueMap{"ApplicationPoolIdentity","LocalService","LocalSystem","NetworkService"}, Values{"ApplicationPoolIdentity","LocalService","LocalSystem","NetworkService"}] string IdentityType;
+};
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)

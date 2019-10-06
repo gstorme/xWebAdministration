@@ -113,6 +113,7 @@ try
                     $result.autoStart | Should Be $mockAppPoolDefaults.autoStart
                 }
 
+<<<<<<< HEAD
                 It 'Should return the CLRConfigFile property' {
                     $result.CLRConfigFile | Should Be $mockAppPoolDefaults.CLRConfigFile
                 }
@@ -298,6 +299,9 @@ try
                 It 'Should return the restartRequestsLimit property' {
                     $result.restartRequestsLimit | Should Be $mockAppPoolDefaults.recycling.periodicRestart.requests
                 }
+=======
+                $result = Get-TargetResource -IsSingleInstance 'Yes'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 It 'Should return the restartTimeLimit property' {
                     $result.restartTimeLimit | Should Be $mockAppPoolDefaults.recycling.periodicRestart.time
@@ -344,6 +348,7 @@ try
 
             }
 
+<<<<<<< HEAD
             Context 'All the properties match the desired state' {
 
                 $mockAppPoolDefaults = @{
@@ -473,6 +478,12 @@ try
                     restartTimeLimit = $mockAppPoolDefaults.recycling.periodicRestart.time
                     restartSchedule = $mockRestartSchedule
                 }
+=======
+            Context 'Application pool defaults correct' {
+                $result = Test-TargetResource -IsSingleInstance 'Yes' `
+                            -ManagedRuntimeVersion 'v4.0' `
+                            -IdentityType 'NetworkService'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 It 'Should return True' {
                     Test-TargetResource -ApplyTo Machine @testParamsSplat |
@@ -481,6 +492,7 @@ try
 
             }
 
+<<<<<<< HEAD
             Context 'Test the autoStart property' {
 
                 $mockAppPoolDefaults = @{
@@ -493,6 +505,12 @@ try
                     Test-TargetResource -ApplyTo Machine -autoStart $true |
                     Should Be $true
                 }
+=======
+            Context 'Application pool different managedRuntimeVersion' {
+                $result = Test-TargetResource -IsSingleInstance 'Yes' `
+                            -ManagedRuntimeVersion 'v2.0' `
+                            -IdentityType 'NetworkService'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 It 'Should return False when the property does not match the desired state' {
                     Test-TargetResource -ApplyTo Machine -autoStart $false |
@@ -501,6 +519,7 @@ try
 
             }
 
+<<<<<<< HEAD
             Context 'Test the CLRConfigFile property' {
 
                 $mockAppPoolDefaults = @{
@@ -513,6 +532,12 @@ try
                     Test-TargetResource -ApplyTo Machine -CLRConfigFile '' |
                     Should Be $true
                 }
+=======
+            Context 'Application pool different processModel/@identityType' {
+                $result = Test-TargetResource -IsSingleInstance 'Yes' `
+                            -ManagedRuntimeVersion 'v4.0' `
+                            -IdentityType 'LocalSystem'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 It 'Should return False when the property does not match the desired state' {
                     Test-TargetResource -ApplyTo Machine -CLRConfigFile 'C:\inetpub\temp\aspnet.config' |
@@ -521,7 +546,13 @@ try
 
             }
 
+<<<<<<< HEAD
             Context 'Test the enable32BitAppOnWin64 property' {
+=======
+            Context 'Application pool no value for managedRuntimeVersion' {
+                $result = Test-TargetResource -IsSingleInstance 'Yes' `
+                            -IdentityType 'NetworkService'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 $mockAppPoolDefaults = @{
                     enable32BitAppOnWin64 = $false
@@ -669,10 +700,17 @@ try
 
                 Mock Get-AppPoolDefault -MockWith {$mockAppPoolDefaults}
 
+<<<<<<< HEAD
                 It 'Should return True when the property matches the desired state' {
                     Test-TargetResource -ApplyTo Machine -queueLength 1000 |
                     Should Be $true
                 }
+=======
+            Context 'Application pool defaults correct' {
+                Set-TargetResource -IsSingleInstance 'Yes' `
+                    -ManagedRuntimeVersion 'v4.0' `
+                    -IdentityType 'NetworkService'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 It 'Should return False when the property does not match the desired state' {
                     Test-TargetResource -ApplyTo Machine -queueLength 2000 |
@@ -681,6 +719,7 @@ try
 
             }
 
+<<<<<<< HEAD
             Context 'Test the cpuAction property' {
 
                 $mockAppPoolDefaults = @{
@@ -695,6 +734,12 @@ try
                     Test-TargetResource -ApplyTo Machine -cpuAction 'NoAction' |
                     Should Be $true
                 }
+=======
+            Context 'Application pool different managedRuntimeVersion' {
+                Set-TargetResource -IsSingleInstance 'Yes' `
+                    -ManagedRuntimeVersion 'v2.0' `
+                    -IdentityType 'NetworkService'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 It 'Should return False when the property does not match the desired state' {
                     Test-TargetResource -ApplyTo Machine -cpuAction 'KillW3wp' |
@@ -703,6 +748,7 @@ try
 
             }
 
+<<<<<<< HEAD
             Context 'Test the cpuLimit property' {
 
                 $mockAppPoolDefaults = @{
@@ -717,6 +763,12 @@ try
                     Test-TargetResource -ApplyTo Machine -cpuLimit 0 |
                     Should Be $true
                 }
+=======
+            Context 'Application pool different processModel/@identityType' {
+                Set-TargetResource -IsSingleInstance 'Yes' `
+                    -ManagedRuntimeVersion 'v4.0' `
+                    -IdentityType 'LocalSystem'
+>>>>>>> BREAKING CHANGE: xWebAppPoolDefaults: Align to best practices for single instance resource (#525)
 
                 It 'Should return False when the property does not match the desired state' {
                     Test-TargetResource -ApplyTo Machine -cpuLimit 90000 |
