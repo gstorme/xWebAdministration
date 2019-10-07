@@ -160,3 +160,23 @@ Configuration MSFT_xWebAppPoolDefaults_Config
 }
 
 
+<<<<<<< HEAD
+=======
+    xWebSiteDefaults LogFormat
+    {
+        IsSingleInstance = 'Yes'
+        LogFormat = $env:PesterLogFormat
+    }
+}
+
+configuration MSFT_xWebAppPoolDefaults_DefaultPool
+{
+    Import-DscResource -ModuleName xWebAdministration
+
+    xWebSiteDefaults DefaultPool
+    {
+        IsSingleInstance = 'Yes'
+        DefaultApplicationPool = $env:PesterDefaultPool
+    }
+}
+>>>>>>> BREAKING CHANGE: xWebSiteDefaults: Align to best practices (#527)
