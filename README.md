@@ -1056,6 +1056,7 @@ xPhp -PackageFolder "C:\packages" `
     -installMySqlExt $false
 ```
 
+<<<<<<< HEAD
 ### Create a new website
 
 While setting up IIS and stopping the default website is interesting, it isn’t quite useful yet.
@@ -1320,6 +1321,8 @@ configuration Sample_IISServerDefaults
 }
 ```
 
+=======
+>>>>>>> xWebSite: Moved localization strings, and examples from README.md (#490)
 ### Create and configure an application pool
 
 This example shows how to use the **xWebAppPool** DSC resource to create and configure an application pool.
