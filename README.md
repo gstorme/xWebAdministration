@@ -1055,6 +1055,7 @@ xPhp -PackageFolder "C:\packages" `
     -ConfigurationPath "C:\MyPhp.ini" `
     -installMySqlExt $false
 ```
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 ### Create a new website
@@ -1395,3 +1396,5 @@ Configuration Sample_xWebAppPool
     }
 }
 ```
+=======
+>>>>>>> xWebAppPool: Remove example from README.md (#541)
