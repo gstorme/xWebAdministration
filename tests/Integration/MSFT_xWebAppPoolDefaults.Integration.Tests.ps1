@@ -50,11 +50,18 @@ $tempName = "$($script:dscResourceName)_" + (Get-Date).ToString("yyyyMMdd_HHmmss
 >>>>>>> Added continuous delivery with a new CI pipeline (#549):tests/Integration/MSFT_xWebAppPoolDefaults.Integration.Tests.ps1
 try
 {
+<<<<<<< HEAD
     # Create configuration backup
     
     Backup-WebConfiguration -Name $tempBackupName | Out-Null
 
     #region Integration Tests
+=======
+    # some constants
+    [string]$constPsPath = 'MACHINE/WEBROOT/APPHOST'
+    [string]$constAPDFilter = 'system.applicationHost/applicationPools/applicationPoolDefaults'
+    [string]$constSiteFilter = 'system.applicationHost/sites/'
+>>>>>>> Integration tests are running on more Microsoft-hosted agents (#564)
 
     $ConfigFile = Join-Path -Path $PSScriptRoot -ChildPath "$($script:dscResourceName).config.ps1"
     . $ConfigFile
@@ -75,7 +82,6 @@ try
             } | Should Not Throw
 =======
     Describe "$($script:dscResourceName)_Integration" {
-        #region DEFAULT TESTS
         It 'Should compile without throwing' {
             {
                 Invoke-Expression -Command "$($script:dscResourceName)_Config -OutputPath `$TestDrive"
@@ -89,8 +95,11 @@ try
                 Get-DscConfiguration -Verbose -ErrorAction Stop
             } | Should Not Throw
         }
+<<<<<<< HEAD
 
         #endregion
+=======
+>>>>>>> Integration tests are running on more Microsoft-hosted agents (#564)
 
         It 'Should have set the resource and all the parameters should match' {
 
@@ -208,6 +217,7 @@ try
         }
 
     }
+<<<<<<< HEAD
 
     #endregion
 }
@@ -222,6 +232,14 @@ finally
 
     Remove-WebConfigurationBackup -Name $tempName
 >>>>>>> Added continuous delivery with a new CI pipeline (#549):tests/Integration/MSFT_xWebAppPoolDefaults.Integration.Tests.ps1
+=======
+}
+finally
+{
+    Restore-WebConfigurationWrapper -Name $tempName -Verbose
 
-    Restore-TestEnvironment -TestEnvironment $script:testEnvironment
+    Remove-WebConfigurationBackup -Name $tempName -Verbose
+>>>>>>> Integration tests are running on more Microsoft-hosted agents (#564)
+
+    Restore-TestEnvironment -TestEnvironment $script:testEnvironment -Verbose
 }
